@@ -881,6 +881,8 @@ header h1 {
 .instruc-h-item img {
     width: 70px;
     height: 70px;
+    object-fit: cover;
+    border-radius: 40px;
 }
 
 
@@ -1445,6 +1447,9 @@ color: #5C6977;
     font-weight: bold;
 }
 .login input[type='submit']{
+    display: none;
+}
+#log-submit{
     display: none;
 }
 .login .des{

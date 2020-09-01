@@ -22,9 +22,6 @@ export default function Signin(){
         /* TODO: handle the submition to the server */
     }
 
-    //test to see the state changing
-    //console.log("the state is",userCred)
-
     return (
         <div className="login flex j-c">
             <div className="login-inner">
