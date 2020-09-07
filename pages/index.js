@@ -28,9 +28,6 @@ export default function Home() {
         <Link href='/comp/physics'><a>physics</a></Link>
       </li>
       <li>
-        <Link href='/comp/profile'><a>profile</a></Link>
-      </li>
-      <li>
         <Link href='/comp/search'><a>search</a></Link>
       </li>
       <li>
@@ -39,6 +36,10 @@ export default function Home() {
       <li>
         <Link href='/comp/test'><a>test</a></Link>
       </li>
+      <li>
+        <Link href='dashboard'><a>dashboard</a></Link>
+      </li>
+
       
     </ul>
     </div>

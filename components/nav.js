@@ -1,30 +1,58 @@
+import Link from "next/link"
 
+export const Nav = () =>{
 
-function Nav(){
+    const navList = [
+        {name:"Home",img:"/icons/nav/home.svg",link:"#"},
+        {name:"Courses",img:"/icons/nav/courses.svg",link:"#"},
+        {name:"Settings",img:"/icons/nav/settings.svg",link:"#"},
+    ]
+
+    /* generate li from the list */
+    const navLiMap = navList.map((e,ind)=>{
+        return(
+            <li key={ind}>
+                <a href={e.link} className="flex-v a-c">
+                    <img src={e.img}/>
+                    <span className="t-grey2">{e.name}</span>
+                </a>
+            </li>
+        )
+    })
+
     return(
         <nav className="nav-dash-bottom flex j-c">
-            <ul className="flex j-sb">
-                <NavLi name="Home" img="/icons/nav/home.svg"/>
-                <NavLi name="Chat" img="/icons/nav/chat.svg"/>
-                <NavLi name="Courses" img="/icons/nav/courses.svg"/>
-                <NavLi name="Notification" img="/icons/nav/notif.svg"/>
-                <NavLi name="Profile" img="/icons/nav/profile.svg"/>
+            <a className="logo" href="#">
+                <img src="/icons/logo/logoNoTxt.svg" alt=""/>
+            </a>
+            <ul className="flex j-sa">
+                {navLiMap}
             </ul>
+            <a href="#" className="points flex">
+                <img src="/icons/nav/points.svg" alt=""/>
+                <span>210</span>
+            </a>
         </nav>
     )
 }
-/* custom li taking two props */
-const NavLi = (props) =>{
-    const name = props.name
-    const img = props.img
-    return(
-        <li>
-            <a href="#" className="flex-v a-c">
-                <img src={img}/>
-                <span className="t-grey2">{name}</span>
-            </a>
-        </li>
-    )
-} 
 
-export default Nav
+export const Tabs = ({pages}) =>{
+    
+    const tabItems = pages.map((e,ind)=>{
+        let active = e.inNow ? "current-tab" : ""
+        return(
+            <Link href={e.href} key={ind}>
+                <a className={active}>{e.name}</a>
+            </Link>
+        )
+    })
+    
+    return(
+        <div className="tabs-wrapper t-align-c comp">
+            <div className="tabs card">
+                {tabItems}
+            </div>
+        </div>
+    )
+}
+

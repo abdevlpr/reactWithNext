@@ -1,4 +1,4 @@
-import {LoginSubmitBtn} from "../../components/login"
+import {SettingList,EditProfileInputs,Privacy,AboutInfo} from "components/settings"
 
 const Settings = () =>{
     
@@ -15,13 +15,13 @@ const Settings = () =>{
     const filedList1 = [
         {name:"firstname",label:"First Name",type:"text"},
         {name:"lastname",label:"Last Name",type:"text"},
-        {name:"firstname",label:"Email",type:"text"},
-        {name:"firstname",label:"Phone",type:"text"},
+        {name:"email",label:"Email",type:"email"},
+        {name:"phone",label:"Phone",type:"text"},
     ]
     const filedList2 = [
-        {name:"firstname",label:"Old Password",type:"password"},
-        {name:"firstname",label:"New Password",type:"password"},
-        {name:"firstname",label:"Confirm Password",type:"password"},
+        {name:"passwordone",label:"Old Password",type:"password"},
+        {name:"passwordtwo",label:"New Password",type:"password"},
+        {name:"passwordthree",label:"Confirm Password",type:"password"},
     ]
 
     const privacyList = [
@@ -55,108 +55,11 @@ const Settings = () =>{
                 <h1>Settings</h1>
             </header>
             <SettingList list={settingList}/>
-            <EditProfile img="/bg/phone-verif/img1.svg" list={filedList1} />
-            <EditProfile img="/bg/phone-verif/img2.svg" list={filedList2} />
+            <EditProfileInputs img="/bg/phone-verif/img1.svg" list={filedList1} />
+            <EditProfileInputs img="/bg/phone-verif/img2.svg" list={filedList2} />
             <Privacy img="/bg/phone-verif/img3.svg" list={privacyList} />
-            <InfoItems img="/bg/phone-verif/img4.svg" list={infoList} />
+            <AboutInfo img="/bg/phone-verif/img4.svg" list={infoList} />
             
-        </div>
-    )
-}
-
-const SettingList = ({list}) =>{
-    const settinglist = list.map((c,ind)=>{
-        return(
-            <div className="item" key={ind}>
-                <div className="icon">
-                    <img src={c.img} alt=""/>
-                </div>
-                <div className="right">
-                    <h3><a href={c.link}>{c.title}</a></h3>
-                    <img src="/icons/arrow-right-2.svg" />
-                </div>
-            </div>
-        )
-    })
-
-    return(
-        <div className="comp-wrapper">
-            <div className="setting-titles comp">
-                <div className="edit">
-                    <img src="/icons/pen.svg"/>
-                </div>
-                {settinglist}
-            </div>
-         </div>
-    )
-}
-const EditProfile = ({img,list}) =>{
-    
-    const EditFields = list.map((e,ind)=>{
-        return(
-            <div className="field" key={ind}>
-                <label htmlFor={e.name}>{e.label}</label>
-                <div className="input">
-                    <input type={e.type} id={e.name} value="this is a test value"/>
-                    <div className="icon"></div>
-                </div>
-            </div>
-        )
-    })
-    return(
-        <div className="comp-wrapper">
-        <img src={img} alt="" class="comp"/>
-            <div className="fields comp">
-                {EditFields}
-                <LoginSubmitBtn btnTxt="SAVE"/>
-            </div>
-           
-        </div>
-    )
-}
-const Privacy = ({img,list}) =>{
-    const Togglelist = list.map((t,ind)=>{
-        return(
-            <div className="item" key={ind}>
-                    <h3>{t.title}</h3>
-                    <div className="toggle">
-                        <input type="checkbox" name="" id={t.type}/>
-                        <label htmlFor={t.type} className="in-toggle"></label>
-                    </div>
-            </div>
-        )
-    })
-    return(
-        <div>
-            <img src={img} className="comp"/>
-            <div class="switch-items comp">            
-                {Togglelist}
-            </div>
-        </div>
-    )
-}
-const InfoItems = ({img,list}) =>{
-
-    const infoItem = list.map((i,ind)=>{
-        const img = i.open ? "/icons/minus.svg":"/icons/plus.svg"
-        const imgClass = i.open ? "open":""
-        return(
-            <div className="item" key={ind}>
-                <div class="top">
-                    <h3>{i.title}</h3>
-                    <div className={`icon ${imgClass}`}><img src={img} alt=""/></div>
-                </div>
-                <p>{i.content}</p>
-            </div>
-        )
-    })
-
-    return(
-        <div>
-        <img src={img} className="comp"/>
-            <div className="info-items comp">
-                {infoItem}
-            </div>
         </div>
     )
 }

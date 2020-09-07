@@ -303,7 +303,6 @@ p {
     margin-right: 1em;
     color: #747A92;
 }
-/* FIXME: refactor this code after getting to the discount stuff */
 .search label[for="submit"] {
     background: #5467FF;
     box-shadow: 0px 10px 22px rgba(84, 103, 255, 0.64);
@@ -396,6 +395,33 @@ article p {
     color: #fff;
     border-radius: 8px;
 }
+
+.react-tabs__tab-list {
+    display: inline-flex;
+    color: #3d4c59;
+    background: #FFFFFF;
+    box-shadow: 0px 9px 34px #E7EFFF;
+    border-radius: 8px;
+  }
+  .react-tabs__tab {
+    list-style: none;
+    padding: 1.2em 2em;
+    font-size: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .5s;
+    transform: scale(0.9);
+  }
+  .react-tabs__tab--selected {
+    background: #3d4c59;
+    color: #fff;
+    border-radius: 8px;
+    transform: scale(1);
+  }
+  .react-tabs__tab--disabled {
+    cursor: default;
+  }
+
 /* curriculum */
 .curriculum {
     padding: 1.5em;
@@ -820,6 +846,13 @@ header h1 {
     padding: 0;
     background: transparent;
     box-shadow: none;
+    border-radius: 0;
+}
+
+.chapter-item.videos > img{
+    height: 80px;
+    width: 120px;
+    object-fit: cover;
     border-radius: 0;
 }
 
@@ -1404,7 +1437,11 @@ color: #5C6977;
 .overview-container .center span{
     margin-left: 7px;
 }
-
+.overviewElements .card {
+    padding: .5em;
+    margin: 1em;
+    color:#657E93;
+}
 .attempts{
     font-size: 12px;
     padding: 1em;

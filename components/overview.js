@@ -1,5 +1,5 @@
 
-const Profile = () =>{
+const Overview = () =>{
 
     const deg = {
         lt:20,ltTitle:"Mathematics",
@@ -8,15 +8,23 @@ const Profile = () =>{
         rb:5,rbTitle:"Chemistry",
         cent:16,centTitle:"Avg Performance"
     }
+
+    const overviewElemList = [
+        {img:"/icons/overview/folder.svg",number:20,title:"Completed Courses"},
+        {img:"/icons/overview/calendar.svg",number:12,title:"Upcoming Courses"},
+        {img:"/icons/overview/badge.svg",number:8,title:"Certificated Earned"},
+    ]
+
     return(
         <div>
             <OverviewCard title="Weekly Test Overview" List={deg} />
             <Attempts title="Total test attempted" moduleNbr={8} />
+            <OverviewElements list={overviewElemList}/>
          </div>
     )
 
 }
-const OverviewCard = ({title,List}) =>{
+export const OverviewCard = ({title,List}) =>{
     return(
         <div class="overview card comp t-align-c">
         <h2>{title}</h2>
@@ -119,7 +127,7 @@ const OverviewCard = ({title,List}) =>{
     </div>
     )
 }
-const Attempts = ({title,moduleNbr}) =>{
+export const Attempts = ({title,moduleNbr}) =>{
     return(
         <div class="attempts card comp">
         <h2>{title}</h2>
@@ -133,7 +141,26 @@ const Attempts = ({title,moduleNbr}) =>{
     </div>
     )
 }
+export const OverviewElements = ({list})=>{
+    const Elements = list.map((e,ind)=>{
+        return(
+            <div class="overviwerItem card" key={ind}>
+                <div class="icon">
+                    <img src={e.img} alt=""/>
+                </div>
+                <h3>{e.number}</h3>
+                <p>{e.title}</p>
+            </div>
+        )
+    })
+
+    return(
+        <div class="overviewElements t-align-c comp flex j-sb">
+            {Elements}
+        </div>
+    )
+}
 
 
 
-export default Profile
+export default Overview

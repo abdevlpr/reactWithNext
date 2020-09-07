@@ -1,18 +1,14 @@
 
 /* custom component for the title */
-export const LoginMessage = (props)=>{
+export const LoginMessage = ({message})=>{
         return (
             <h1 className="log-heading t-align-c t-grey2">
-                {props.message}
+                {message}
             </h1>
         )
 }
 /* custom component for input */
-export const LoginInput = (props) =>{
-        const label= props.label
-        const type = props.type;
-        const value= props.value;
-        const change= props.change;
+export const LoginInput = ({label,type,value,change}) =>{
         return(
             <div className="log-input card">
                 <label htmlFor={label}>
@@ -23,11 +19,11 @@ export const LoginInput = (props) =>{
         )
 }
 /* custom component for submit btn */
-export const LoginSubmitBtn = (props) => {
-      const btnTxt = props.btnTxt
+export const LoginSubmitBtn = ({btnTxt}) => {
         return(
             <div>
-            <label htmlFor="log-submit" className="btn-next btn-interact" href="#">
+            {/* TODO: changing the log-submit for name as it cause problem when multiple forms are present */}
+            <label htmlFor="log-submit" className="btn-next btn-interact">
                         <span>{btnTxt}</span>
                         <div className="icon flex j-c">
                             <img src="/icons/arrow-right.svg" alt=""/>

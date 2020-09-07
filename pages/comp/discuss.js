@@ -1,10 +1,11 @@
-import {Subheading,Tabs} from "./lesson"
+import {Tabs} from "components/nav"
+import {Subheading,DiscussList} from "components/posts"
 
 const Discuss = ()=>{
     const tabs = [
-        {href:"#",name:"Lesson",stat:false},
-        {href:"#",name:"Test",stat:false},
-        {href:"#",name:"Discuss",stat:true}
+        {href:"#",name:"Lesson",inNow:false},
+        {href:"#",name:"Test",inNow:false},
+        {href:"#",name:"Discuss",inNow:true}
         
     ]
 
@@ -23,43 +24,5 @@ const Discuss = ()=>{
     )
 }
 
-const DiscussList = ({discussList}) =>{
-
-    const discussItems = discussList.map(d=>{
-        const likeImg = d.like?"/icons/like-fill.svg":"/icons/like.svg"
-        return(
-            <div class="discuss-item">
-                <div class="avatar">
-                    <img src={d.avatarImg}/>
-                </div>
-                <div class="des">
-                    <div class="top flex j-sb">
-                        <h3>{d.title}</h3>
-                        <h5>{d.time}</h5>
-                    </div>
-                    <p>{d.des}</p>
-                    <div class="bot flex">
-                        <div class="like">
-                            <img src={likeImg}/>
-                            <span>{d.likeNumber}</span>
-                        </div>
-                        <div class="reply">
-                            <img src="/icons/reply.svg"/>
-                            <span> Reply</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        )
-    })
-
-    return(
-        <div class="discuss-wrapper comp">
-            {discussItems}
-        </div>
-    )
-
-}
 
 export default Discuss

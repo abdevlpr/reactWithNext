@@ -1,7 +1,7 @@
 import {useState} from "react"
 import Link from "next/link"
 /* components */
-import {LoginMessage,LoginInput,LoginSubmitBtn} from "../components/login"
+import {LoginMessage,LoginInput,LoginSubmitBtn} from "components/login"
 
 export default function Signup(){
 
