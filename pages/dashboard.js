@@ -1,64 +1,29 @@
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { motion } from "framer-motion"
 
-import Articles from "pages/comp/article"
-import Test from "pages/comp/test"
 import {Nav} from "components/nav"
 import {UserInfo} from "components/dashboardComp"
-import {CurrWithPercent,CurrWithIconSec} from "components/curriculum"
-import {DiscussList} from "components/posts"
+import {CurrWithPercent} from "components/curriculum"
+import {CourseOneVert} from "components/courses"
+import Overview from "components/overview"
 
 
-const currList =[
-    {img:"/icons/curriculum/icon1.svg",title:"How do Organisms Reproduce?"},
-    {img:"/icons/curriculum/icon2.svg",title:"Heredity and Evolution"},
-    {img:"/icons/curriculum/icon3.svg",title:"Our Environment"},
-    {img:"/icons/curriculum/icon4.svg",title:"Life Processes"},
-    {img:"/icons/curriculum/icon5.svg",title:"Control and Coordination"},
-]
-const discussList= [
-    {avatarImg:"/user/user_opt1.jpg",title:"Tara Zona",time:"30 min",des:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero, nibh ipsum vestibulum ut arcu risus purus eu id. At eget magnis nulla.",like:true,likeNumber:24},
-    {avatarImg:"/user/user_opt1.jpg",title:"Bridget Theriveaquai",time:"1 hour",des:"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis",like:false,likeNumber:24},
-    {avatarImg:"/user/user_opt1.jpg",title:"Staum Clowd",time:"5 hours",des:"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making",like:true,likeNumber:24},
+
+
+/* replaced by the api later */
+const currListPercent=[
+    {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:80},
+    {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:70},
+    {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:60},
+    {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:0},
 ]
 
+const courseOneVertList = [
+    {course:"Biology Basic",img:"/bg/bg_opt1.jpg",type:"Biology & The Scientific Method",time:"2-4 hours a week"},
+    {course:"Biology Basic",img:"/bg/bg_opt1.jpg",type:"Biology & The Scientific Method",time:"2-4 hours a week"},
+    {course:"Biology Basic",img:"/bg/bg_opt1.jpg",type:"Biology & The Scientific Method",time:"2-4 hours a week"},
+    {course:"Biology Basic",img:"/bg/bg_opt1.jpg",type:"Biology & The Scientific Method",time:"2-4 hours a week"}
+]
 
-const TabbingSystem =() =>{
-    return(
-        <Tabs className='tabs-wrapper flex-v a-c comp'>
-        <TabList>
-          <Tab>Lesson</Tab>
-          <Tab>Test</Tab>
-          <Tab>Discuss</Tab>
-        </TabList>
-
-        <TabPanel>
-            <motion.div 
-                    initial={{scale:0}}
-                    animate={{scale:1}}
-                >
-            <CurrWithIconSec list={currList} />
-            </motion.div>
-        </TabPanel>
-        <TabPanel>
-            <motion.div 
-                    initial={{scale:0}}
-                    animate={{scale:1}}
-                >
-                <Test />
-            </motion.div>
-        </TabPanel>
-        <TabPanel>
-            <motion.div 
-                initial={{scale:0}}
-                animate={{scale:1}}
-            >
-                <DiscussList discussList={discussList} />
-            </motion.div>
-        </TabPanel>
-      </Tabs>
-    )
-}
 
 const DashboardLeftTop = () =>{
     return(
@@ -80,17 +45,14 @@ const DashboardLeftTop = () =>{
     )
 }
 const DashboardLeftCenter = () =>{
-    
-    
     return(
         <div className="dash-left-cont scroll axe-y">
-            <h1 className="t-grey2 comp t-align-c">Some Title</h1>
             <div className="colWrapper">
                 <div className="col">
-                    <Articles />
+                    <Overview />
                 </div>
                 <div className="col">
-                    <TabbingSystem />
+                    <CourseOneVert title="Popular Courses in Education" courses={courseOneVertList} />
                 </div>
             </div>
         </div>
@@ -112,12 +74,6 @@ const DashboardRightCenter = () =>{
     )
 }
 const DashboardRightBottom = () =>{
-    const currListPercent=[
-        {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:80},
-        {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:70},
-        {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:60},
-        {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:0},
-    ]
     return(
         <div className="dash-right-bottom scroll axe-y">
             <CurrWithPercent list={currListPercent} />
@@ -131,9 +87,9 @@ const Dashborad = () =>{
             <div className="dash-left">
                 <DashboardLeftTop />
                 <DashboardLeftCenter />
-                <motion.div initial={{scale:0}} animate={{ scale:1 }} >
-                    <Nav/>
-                </motion.div>
+                <div>
+                    <Nav userPoints="55"/>
+                </div>
             </div>
             <div className="dash-right flex-v">
                 <DashboardRightTop />

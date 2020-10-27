@@ -1,11 +1,11 @@
 import Link from "next/link"
 
-export const Nav = () =>{
+export const Nav = ({userPoints}) =>{
 
     const navList = [
-        {name:"Home",img:"/icons/nav/home.svg",link:"#"},
-        {name:"Courses",img:"/icons/nav/courses.svg",link:"#"},
-        {name:"Settings",img:"/icons/nav/settings.svg",link:"#"},
+        {name:"Home",img:"/icons/nav/home.svg",link:"/"},
+        {name:"Courses",img:"/icons/nav/courses.svg",link:"/courses"},
+        {name:"Settings",img:"/icons/nav/settings.svg",link:"/settings"},
     ]
 
     /* generate li from the list */
@@ -30,7 +30,7 @@ export const Nav = () =>{
             </ul>
             <a href="#" className="points flex">
                 <img src="/icons/nav/points.svg" alt=""/>
-                <span>210</span>
+                <span>{userPoints}</span>
             </a>
         </nav>
     )
