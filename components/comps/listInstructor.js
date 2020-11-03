@@ -37,11 +37,11 @@ export const InstructorOneHoriz = ({title,list}) =>{
 
     const instList = list.map((c,ind)=>{
         return(
-            <div class="instruc-h-item" key={ind}>
-                <div class="top">
+            <div className="instruc-h-item" key={ind}>
+                <div className="top">
                     <img src={c.img} alt=""/>
                 </div>
-                <div class="bot">
+                <div className="bot">
                     <h4>
                         <Link href={c.link}>
                             <a>{c.name}</a>
@@ -54,11 +54,11 @@ export const InstructorOneHoriz = ({title,list}) =>{
     })
 
     return(
-    <div class="instruc-h comp scroll">
-            <div class="title t-grey2">
+    <div className="instruc-h comp scroll">
+            <div className="title t-grey2">
                 <h2>{title}</h2>
             </div>
-            <div class="instruc-h-wrapper">
+            <div className="instruc-h-wrapper">
                 {instList}
             </div>
         </div>

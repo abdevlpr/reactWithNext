@@ -964,6 +964,13 @@ header h1 {
 .notif-item .avatar {
     margin: 0;
 }
+.notif-item .avatar img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25px;
+}
 
 .notif-item .des * {
     margin: .2em 0;
@@ -1204,7 +1211,7 @@ color: #5C6977;
 .popular-course-item {
     min-width: 190px;
     max-width: 200px;
-    margin: 0 .5em;
+    margin: 1em .5em;
 }
 
 .popular-course-item .img {
@@ -1524,8 +1531,7 @@ color: #5C6977;
     background: #FFFFFF;
     box-shadow: 0px 9px 34px #E7EFFF;
     border-radius: 10px;
-    position: relative;
-    margin-top: -5em;
+    margin-top: 6em;
 
 }
 .setting-titles .edit{
@@ -1835,3 +1841,65 @@ padding-bottom: 3em;
     font-size: 10px;
     text-anchor: middle;
   }
+  .commingSoon-wrapper{
+      background: transparent;
+      z-index: 10;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+  }
+  .commingSoon{
+      background:#3D4C59;
+      color:#fff;
+      padding: 2em 1em;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      display: none;
+  }
+  .commingShow{
+      display: inline-block;
+  }
+
+
+.drop-btn{
+    padding: 1.5em;
+    font-size: 12px;
+    font-weight: bold;
+    transition: .2s;
+}
+.drop-btn img{
+    margin-right: 1em;
+}
+
+.notification{
+    font-size: 12px;
+    cursor: pointer;
+    transition: .2s;
+    user-select: none;
+}
+.notification .icon{
+    padding: 1em;
+    margin: 0 .5em;
+    position: relative;
+}
+.indicator{
+    background: red;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    top:1px;
+    right: 5px;
+    left: unset;
+}   
+@media (hover:hover){
+    .drop-btn:hover,.notification:hover .icon{
+        background: #3D4C5910;
+    }
+}

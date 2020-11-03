@@ -1,4 +1,4 @@
-import {Subheading,PostHead,Article} from "components/posts"
+import {Subheading,PostHead,Article} from "components/comps/postItems"
 
 const Articles = () =>{
 

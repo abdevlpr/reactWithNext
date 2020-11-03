@@ -141,11 +141,11 @@ export const CurrTags = ({title,list}) =>{
     })
 
     return(
-        <div class="tags comp">
-            <div class="title t-grey2">
+        <div className="tags comp">
+            <div className="title t-grey2">
                 <h2>{title}</h2>
             </div>
-            <div class="tags-wrapper">
+            <div className="tags-wrapper">
                 {tagsList}
             </div>
         </div>
@@ -166,11 +166,11 @@ export const CurrCategorie = ({title,list}) =>{
     })
 
     return(
-        <div class="categ comp">
-            <div class="title t-grey2">
+        <div className="categ comp">
+            <div className="title t-grey2">
                 <h2>Browse Categories</h2>
             </div>
-                <ul class="categ-wrapper">
+                <ul className="categ-wrapper">
                     {categList}
                 </ul>
         </div>

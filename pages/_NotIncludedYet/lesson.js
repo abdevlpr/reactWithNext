@@ -1,6 +1,6 @@
-import {Tabs} from "components/nav"
-import {CurrWithIconSec} from "components/curriculum.js"
-import {Subheading,PostHead,Article} from "components/posts"
+import {Tabs} from "components/comps/navMenu"
+import {CurrWithIconSec} from "components/comps/listCurriculum.js/index.js"
+import {Subheading,PostHead,Article} from "components/comps/postItems"
 
 const Lesson = () =>{
 

@@ -1,4 +1,4 @@
-import {LoginSubmitBtn} from "./login"
+import {LoginSubmitBtn} from "./loginItems"
 
 export const SettingList = ({list}) =>{
     const settinglist = list.map((c,ind)=>{
@@ -18,9 +18,6 @@ export const SettingList = ({list}) =>{
     return(
         <div className="comp-wrapper">
             <div className="setting-titles comp">
-                <div className="edit">
-                    <img src="/icons/pen.svg"/>
-                </div>
                 {settinglist}
             </div>
          </div>
@@ -41,7 +38,7 @@ export const EditProfileInputs = ({img,list}) =>{
     })
     return(
         <div className="comp-wrapper">
-        <img src={img} alt="" class="comp"/>
+        <img src={img} alt="" className="comp"/>
             <div className="fields comp">
                 <form>
                     {EditFields}
@@ -67,7 +64,7 @@ export const Privacy = ({img,list}) =>{
     return(
         <div>
             <img src={img} className="comp"/>
-            <div class="switch-items comp">            
+            <div className="switch-items comp">            
                 {Togglelist}
             </div>
         </div>
@@ -80,7 +77,7 @@ export const AboutInfo = ({img,list}) =>{
         const imgClass = i.open ? "open":""
         return(
             <div className="item" key={ind}>
-                <div class="top">
+                <div className="top">
                     <h3>{i.title}</h3>
                     <div className={`icon ${imgClass}`}><img src={img} alt=""/></div>
                 </div>

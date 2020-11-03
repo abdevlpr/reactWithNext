@@ -1,13 +1,14 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import {useRouter} from "next/router"
 import { motion } from "framer-motion"
 
-import Articles from "pages/comp/article"
-import Test from "pages/comp/test"
-import {Nav} from "components/nav"
-import {UserInfo} from "components/dashboardComp"
-import {CurrWithPercent,CurrWithIconSec} from "components/curriculum"
-import {DiscussList} from "components/posts"
+import Articles from "components/comps/postArticle"
+import Test from "components/comps/listTests"
+import {CurrWithPercent,CurrWithIconSec} from "components/comps/listCurriculum"
+import {DiscussList} from "components/comps/postItems"
 
+import MainContentLayout from "components/layout/layoutMainContent"
+import SlidingMenuLayout from "components/layout/layoutSlidingMenu"
 
 const currList =[
     {img:"/icons/curriculum/icon1.svg",title:"How do Organisms Reproduce?"},
@@ -27,6 +28,11 @@ const currListPercent=[
         {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:60},
         {img:"/bg/bg_opt1.jpg",title:"The sound theories",des:"Contrary to popular belief,",videos:20,books:10,percent:0},
     ]
+const testList = [
+        {icon:"/icons/curriculum/icon1.svg",title:"Heredity and Evolution",des:"The first step in the scientific method is stating a problem based on observation. In this stage",btnLinkable:true,btnLink:"/courses/test/1"},
+        {icon:"/icons/curriculum/icon2.svg",title:"Our Environment",des:"The first step in the scientific method is stating a problem based on observation. In this stage",btnLinkable:false},
+        {icon:"/icons/curriculum/icon3.svg",title:"Life Processes",des:"The first step in the scientific method is stating a problem based on observation. In this stage",btnLinkable:false}
+    ]
 
 const TabbingSystem =() =>{
     return(
@@ -39,12 +45,12 @@ const TabbingSystem =() =>{
 
         <TabPanel>
             <div>
-            <CurrWithIconSec list={currList} />
+                <CurrWithIconSec list={currList} />
             </div>
         </TabPanel>
         <TabPanel>
             <div>
-                <Test />
+                <Test testList={testList}/>
             </div>
         </TabPanel>
         <TabPanel>
@@ -56,29 +62,12 @@ const TabbingSystem =() =>{
     )
 }
 
-const DashboardLeftTop = () =>{
-    return(
-        <div className="dash-left-top ">
-            <div className="dash-top-container flex j-sb">
-                <a href="#" className="drop-btn flex j-sa t-grey2 card">
-                    <img className="icon-s0" src="/icons/drop-down.svg" alt=""/>
-                    <span>All resources</span>
-                </a>
-                <div className="notification flex t-grey0">
-                    <span>Notification</span>
-                    <div className="icon flex j-c img-rc card">
-                        <div className="indicator right"></div>
-                        <img className="icon-s" src="/icons/notification.svg" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
 const DashboardLeftCenter = () =>{
+    const router = useRouter()
+    const {coursenumber} = router.query
     return(
         <div className="dash-left-cont scroll axe-y">
-            <h1 className="t-grey2 comp t-align-c">Some Title</h1>
+            <h1 className="t-grey2 comp t-align-c">course number {coursenumber}</h1>
             <div className="colWrapper">
                 <div className="col">
                     <Articles />
@@ -90,21 +79,7 @@ const DashboardLeftCenter = () =>{
         </div>
     )
 }
-const DashboardRightTop = ()=>{
-    return(
-        <div className="dash-right-top flex j-sb t-grey2">
-            <span>Logout</span>
-            <a href="#">
-                <img className="icon-x" src="/icons/logout.svg" alt=""/>
-            </a>
-        </div>
-    )
-}
-const DashboardRightCenter = () =>{
-    return(
-        <UserInfo title="Petey Crusier" des="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, quibusdam."/>
-    )
-}
+
 const DashboardRightBottom = () =>{
     
     return(
@@ -117,18 +92,12 @@ const DashboardRightBottom = () =>{
 const Courses = () =>{
     return(
         <div className="dashboard">
-            <div className="dash-left">
-                <DashboardLeftTop />
+            <MainContentLayout>
                 <DashboardLeftCenter />
-                <div>
-                    <Nav userPoints="220"/>
-                </div>
-            </div>
-            <div className="dash-right flex-v">
-                <DashboardRightTop />
-                <DashboardRightCenter />
+            </MainContentLayout>
+            <SlidingMenuLayout>
                 <DashboardRightBottom />
-            </div>
+            </SlidingMenuLayout>
         </div>
     )
 }

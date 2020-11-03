@@ -1,5 +1,5 @@
-import {Tabs} from "components/nav"
-import {Subheading,DiscussList} from "components/posts"
+import {Tabs} from "components/comps/navMenu"
+import {Subheading,DiscussList} from "components/comps/postItems"
 
 const Discuss = ()=>{
     const tabs = [

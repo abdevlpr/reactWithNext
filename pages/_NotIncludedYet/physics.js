@@ -1,6 +1,6 @@
-import {Tabs} from "components/nav"
-import {CourseOneHoriz} from "components/courses"
-import {CurrWithPercent,CurrWithIcon,CurrWithPdf} from "components/curriculum.js"
+import {Tabs} from "components/comps/navMenu"
+import {CourseOneHoriz} from "components/comps/listCourses"
+import {CurrWithPercent,CurrWithIcon,CurrWithPdf} from "components/comps/listCurriculum.js/index.js"
 
 
 const Physics = () =>{

@@ -42,25 +42,25 @@ export const Article=({title,content})=>{
 }
 export const DiscussList = ({discussList}) =>{
 
-    const discussItems = discussList.map(d=>{
+    const discussItems = discussList.map((d,ind)=>{
         const likeImg = d.like?"/icons/like-fill.svg":"/icons/like.svg"
         return(
-            <div class="discuss-item">
-                <div class="avatar">
+            <div className="discuss-item" key={ind}>
+                <div className="avatar">
                     <img src={d.avatarImg}/>
                 </div>
-                <div class="des">
-                    <div class="top flex j-sb">
+                <div className="des">
+                    <div className="top flex j-sb">
                         <h3>{d.title}</h3>
                         <h5>{d.time}</h5>
                     </div>
                     <p>{d.des}</p>
-                    <div class="bot flex">
-                        <div class="like">
+                    <div className="bot flex">
+                        <div className="like">
                             <img src={likeImg}/>
                             <span>{d.likeNumber}</span>
                         </div>
-                        <div class="reply">
+                        <div className="reply">
                             <img src="/icons/reply.svg"/>
                             <span> Reply</span>
                         </div>
@@ -72,7 +72,7 @@ export const DiscussList = ({discussList}) =>{
     })
 
     return(
-        <div class="discuss-wrapper comp">
+        <div className="discuss-wrapper comp">
             {discussItems}
         </div>
     )

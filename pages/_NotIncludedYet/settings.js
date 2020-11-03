@@ -1,4 +1,4 @@
-import {SettingList,EditProfileInputs,Privacy,AboutInfo} from "components/settings"
+import {SettingList,EditProfileInputs,Privacy,AboutInfo} from "components/comps/settingsItems"
 
 const Settings = () =>{
     

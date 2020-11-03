@@ -1,6 +1,6 @@
-import Overview from "components/overview"
-import {InstructorOneHoriz} from "components/instructor"
-import {CurrTags,CurrCategorie} from "components/curriculum"
+import Overview from "components/comps/showOverview"
+import {InstructorOneHoriz} from "components/comps/listInstructor"
+import {CurrTags,CurrCategorie} from "components/comps/listCurriculum"
 
 const Search = () =>{
     const tagsList = [
@@ -36,7 +36,7 @@ const Search = () =>{
     ]
 
     return(
-        <div class="comp-wrapper">
+        <div className="comp-wrapper">
             <CurrTags title="Top Searches" list={tagsList} />
             <InstructorOneHoriz title="Top Instructors" list={instructorList} />
             <CurrCategorie title="Browse Categories" list={categList} />

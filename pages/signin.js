@@ -1,7 +1,7 @@
 import {useState} from "react"
 import Link from "next/link"
 /* components */
-import {LoginMessage,LoginInput,LoginSubmitBtn} from "components/login"
+import {LoginMessage,LoginInput,LoginSubmitBtn} from "components/comps/loginItems"
 
 export default function Signin(){
 
@@ -42,10 +42,9 @@ export default function Signin(){
                         <span className="t-grey2">
                             Don’t have an account?
                         </span>
-                            <Link href="/signup">
-                                <a className="t-blue"> Sign Up</a>
-                            </Link>
-                        
+                        <Link href="/signup">
+                            <a className="t-blue"> Sign Up</a>
+                        </Link>
                     </div>
                 </form>
             </div>

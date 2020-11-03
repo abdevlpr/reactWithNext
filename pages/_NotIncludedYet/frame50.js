@@ -1,9 +1,9 @@
-import {HeaderWithImg} from "components/posts.js"
-import {Nav} from "components/nav"
-import {CourseOneVert,CourseTwoVert} from "components/courses"
-import {CurrHorizWithIcon} from "components/curriculum.js"
-import {InstrucTwoHoriz} from "components/instructor.js"
-import {SearchLikeForm} from "components/submit.js"
+import {HeaderWithImg} from "components/comps/postItems.js/index.js"
+import {Nav} from "components/comps/navMenu"
+import {CourseOneVert,CourseTwoVert} from "components/comps/listCourses"
+import {CurrHorizWithIcon} from "components/comps/listCurriculum.js/index.js"
+import {InstrucTwoHoriz} from "components/comps/listInstructor.js"
+import {SearchLikeForm} from "components/comps/btnSearch.js/index.js.js"
 
 const Frame50 = () =>{
     const currHorizWithIconList = [
