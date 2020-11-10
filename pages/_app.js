@@ -1,5 +1,6 @@
 import 'styles/comp-mobile.css'
 import 'styles/comp-desktop.css'
+import 'styles/test.css'
 import PageHead from "components/pageStandards/head"
 
 function MyApp({ Component, pageProps }) {
