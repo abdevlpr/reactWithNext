@@ -2,7 +2,6 @@ import {useRouter} from "next/router"
 import {useState} from "react"
 
 import {LoginSubmitBtn} from "components/comps/loginItems"
-import DashboardRightBottom from "components/comps/listDashboard"
 import MainContentLayout from "components/layout/layoutMainContent"
 import SlidingMenuLayout from "components/layout/layoutSlidingMenu"
 
@@ -54,11 +53,15 @@ const Test = () =>{
     }
     return(
         <div className="dashboard">
-            <MainContentLayout handleClick={handleClick}>
+            <MainContentLayout handleClick={handleClick} hide>
                 <Questions qlist={qlist} question={question}/>
             </MainContentLayout>
-            <SlidingMenuLayout open={openedMenu}>
-                <DashboardRightBottom />
+            <SlidingMenuLayout open={openedMenu} hideCenter>
+                <div className="t-align-c">
+                    <h2 className='t-grey2'>Biology Basic</h2>
+                    <p className='t-grey1'>Heredity and Evolution</p>
+                    <h4>TIMER</h4>
+                </div>
             </SlidingMenuLayout>
         </div>
     )

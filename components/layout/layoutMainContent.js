@@ -14,12 +14,12 @@ const MenuTop = () =>{
         </div>
     )
 }
-const MainContentLayout = ({children,handleClick}) =>{
+const MainContentLayout = ({children,handleClick,hide}) =>{
     return(
         <div className="dash-left">
-            <MenuTop />
+            {!hide && <MenuTop />}
             {children}
-            <Nav userPoints="55" handleClick={handleClick}/>
+            {!hide && <Nav userPoints="55" handleClick={handleClick}/>}
         </div>
     )
 }

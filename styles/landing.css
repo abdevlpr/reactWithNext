@@ -4,7 +4,7 @@
   font-size: 16px;
   padding: 0;
   margin: 0;
-  margin-top: -2em;
+  width: 100%;
 }
 
 .landingPage * {
@@ -56,6 +56,11 @@
       -ms-flex-align: center;
           align-items: center;
   margin-top: 3em;
+}
+
+.landingPage header{
+  margin: 0;
+  margin-bottom: 2em;
 }
 
 .landingPage .top {
@@ -139,7 +144,7 @@
   display: block;
   left: 0;
   right: 0;
-  margin: 1em auto;
+  margin: -2em auto;
 }
 
 .landingPage .hero-wrapper,
@@ -246,7 +251,7 @@
   text-align: center;
 }
 .landingPage .how-it{
-  margin: 10em;
+  margin-top: 15em;
 }
 .landingPage .how-it .card img {
   height: 100px;
@@ -991,6 +996,9 @@
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+  .landingPage .hero .svg img{
+    display: none;
   }
   .landingPage .btn-wrapper {
     margin-top: -3em;

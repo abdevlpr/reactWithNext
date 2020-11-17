@@ -15,12 +15,12 @@ const DashboardRightCenter = () =>{
         <UserInfo title="Petey Crusier" des="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, quibusdam."/>
     )
 }
-const SlidingMenuLayout = ({children,open}) =>{
+const SlidingMenuLayout = ({children,open,hideCenter}) =>{
     const show = open ? "dash-rightShow" : ""
     return(
         <div className={`dash-right flex-v ${show}`}>
                 <DashboardRightTop />
-                <DashboardRightCenter />
+                {!hideCenter && <DashboardRightCenter />}
                 {children}
         </div>
     )

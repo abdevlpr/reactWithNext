@@ -468,6 +468,12 @@ article p {
 .test-card p {
     margin: 1.5em 0;
 }
+.quest-next label{
+    padding: 1em;
+}
+.quest-next label span{
+    margin: 0 2em;
+}
 
 /* next button component */
 .btn-next{
