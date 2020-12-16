@@ -474,6 +474,11 @@ article p {
 .quest-next label span{
     margin: 0 2em;
 }
+.quest-next>div{
+    max-width: 450px;
+    width: 100%;
+    margin-top: 1em;
+}
 
 /* next button component */
 .btn-next{
@@ -607,6 +612,7 @@ header h1 {
     padding: 1.5em 1em;
     margin: 1em 0;
     color: #758FA4;
+    cursor: pointer;
 
 }
 
@@ -619,8 +625,8 @@ header h1 {
     display: block;
 }
 
-.quest-bot .curr-answer,
-.quest-bot .curr-answer .circle {
+.quest-bot input:checked + label,
+.quest-bot input:checked + label .circle {
     border: 2px solid #12CE8A;
     color: #12CE8A;
 }
